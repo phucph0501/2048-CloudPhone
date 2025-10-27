@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>2048 Game for CloudFone Platform</title>
+    <meta name="description" content="Classic 2048 puzzle game optimized for CloudFone feature phones with small screens and keyboard navigation">
+    <meta name="keywords" content="2048, game, CloudFone, feature phone, puzzle, web app">
+    <meta name="author" content="phucph0501">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://phucph0501.github.io/2048-CloudPhone/">
+    <meta property="og:title" content="2048 Game for CloudFone Platform">
+    <meta property="og:description" content="Classic 2048 puzzle game optimized for CloudFone feature phones">
+    <meta property="og:image" content="https://phucph0501.github.io/2048-CloudPhone/icon-192.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://phucph0501.github.io/2048-CloudPhone/">
+    <meta property="twitter:title" content="2048 Game for CloudFone Platform">
+    <meta property="twitter:description" content="Classic 2048 puzzle game optimized for CloudFone feature phones">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="apple-touch-icon" href="icon-192.png">
+    
+    <!-- Manifest -->
+    <link rel="manifest" href="manifest.json">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- CloudFone optimizations -->
+    <style>
+        /* Additional GitHub Pages optimizations */
+        .github-banner {
+            position: fixed;
+            top: 0;
+            right: 0;
+            z-index: 1000;
+            background: #333;
+            color: white;
+            padding: 5px 10px;
+            font-size: 10px;
+            text-decoration: none;
+            border-radius: 0 0 0 5px;
+        }
+        
+        .github-banner:hover {
+            background: #555;
+            color: white;
+        }
+        
+        @media (max-width: 240px) {
+            .github-banner {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- GitHub Link for larger screens -->
+    <a href="https://github.com/phucph0501/2048-CloudPhone" class="github-banner" target="_blank">View on GitHub</a>
+    
+    <div class="container">
+        <header class="header">
+            <h1>2048</h1>
+            <div class="score-container">
+                <div class="score-box">
+                    <div class="score-label">Score</div>
+                    <div class="score" id="score">0</div>
+                </div>
+                <div class="score-box">
+                    <div class="score-label">Best</div>
+                    <div class="score" id="best">0</div>
+                </div>
+            </div>
+        </header>
+
+        <div class="game-intro">
+            <p>Join numbers to get <strong>2048!</strong></p>
+        </div>
+
+        <div class="game-container">
+            <div class="grid-container">
+                <div class="grid-row">
+                    <div class="grid-cell"></div>
+                    <div class="grid-cell"></div>
+                    <div class="grid-cell"></div>
+                    <div class="grid-cell"></div>
+                </div>
+                <div class="grid-row">
+                    <div class="grid-cell"></div>
+                    <div class="grid-cell"></div>
+                    <div class="grid-cell"></div>
+                    <div class="grid-cell"></div>
+                </div>
+                <div class="grid-row">
+                    <div class="grid-cell"></div>
+                    <div class="grid-cell"></div>
+                    <div class="grid-cell"></div>
+                    <div class="grid-cell"></div>
+                </div>
+                <div class="grid-row">
+                    <div class="grid-cell"></div>
+                    <div class="grid-cell"></div>
+                    <div class="grid-cell"></div>
+                    <div class="grid-cell"></div>
+                </div>
+            </div>
+            <div class="tile-container" id="tile-container">
+                <!-- Tiles will be dynamically generated here -->
+            </div>
+        </div>
+
+        <div class="game-message" id="game-message">
+            <p></p>
+            <div class="lower">
+                <a class="retry-button" href="#">Try Again</a>
+            </div>
+        </div>
+
+        <!-- Soft Key Bar for CloudFone navigation -->
+        <div class="soft-key-bar">
+            <div class="soft-key left" id="soft-key-left">New Game</div>
+            <div class="soft-key-spacer"></div>
+            <div class="soft-key right" id="soft-key-right">Exit</div>
+        </div>
+
+        <div class="instructions">
+            <p><strong>How to play:</strong> Use arrow keys to move tiles. When two tiles with the same number touch, they merge into one!</p>
+            <p><strong>Controls:</strong> ↑↓←→ Arrow keys to move, Left menu for new game, Right menu to exit</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    
+    <!-- GitHub Pages Analytics (optional) -->
+    <script>
+        // Simple page view tracking
+        if (window.location.hostname === 'phucph0501.github.io') {
+            console.log('2048 CloudFone Game loaded successfully on GitHub Pages');
+        }
+    </script>
+</body>
+</html>

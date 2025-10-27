@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Generate Favicon</title>
+</head>
+<body>
+    <canvas id="canvas" width="32" height="32"></canvas>
+    <script>
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+        
+        // Draw 2048 favicon
+        ctx.fillStyle = '#edc22e';
+        ctx.fillRect(0, 0, 32, 32);
+        
+        ctx.fillStyle = '#f9f6f2';
+        ctx.font = 'bold 12px Arial';
+        ctx.textAlign = 'center';
+        ctx.fillText('2048', 16, 22);
+        
+        // Convert to data URL and download
+        const dataURL = canvas.toDataURL('image/png');
+        const link = document.createElement('a');
+        link.download = 'favicon.png';
+        link.href = dataURL;
+        link.click();
+    </script>
+</body>
+</html>
